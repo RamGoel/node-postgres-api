@@ -6,12 +6,17 @@ const db=require('./db/queries')
 
 app.use(bodyParser.json())
 
-app.get('/', db.getUsers)
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 )
+
+app.get('/user', db.getUsers)
+app.post('/user', db.addNewUser)
+app.delete('/user', db.deleteUser)
+app.put('/user', db.updateUser)
 
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
