@@ -2,10 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const PORT = 3000
-
+const db=require('./db/queries')
 
 app.use(bodyParser.json())
 
+app.get('/', db.getUsers)
 app.use(
   bodyParser.urlencoded({
     extended: true,
