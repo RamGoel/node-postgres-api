@@ -28,11 +28,12 @@ const getUsers = (request, response) => {
     response.status(200).json(results.rows);
   });
 };
+
 const addNewUser = (request, response) => {
   const { fname, lname, age, country, email } = request.body;
 
-  if(!fname || !lname || !age || !country || !email) {
-    response.status(400).json({message:"Bad Request"})
+  if (!fname || !lname || !age || !country || !email) {
+    response.status(400).json({ message: "Bad Request" });
     return;
   }
   pool.query(
@@ -42,29 +43,28 @@ const addNewUser = (request, response) => {
       if (error) {
         throw error;
       }
-      response.status(200).json({message:"Successfully Added"});
+      response.status(200).json({ message: "Successfully Added" });
     }
   );
 };
-const deleteUser=(request, response)=>{
-  const {id}=request.query;
 
-  if(!id){
-    response.status(400).json({message:"Invalid Request"})
+const deleteUser = (request, response) => {
+  const { id } = request.query;
+
+  if (!id) {
+    response.status(400).json({ message: "Invalid Request" });
     return;
   }
-  pool.query(`DELETE FROM person WHERE passenger_id=${id}`,(error, result)=>{
+  pool.query(`DELETE FROM person WHERE passenger_id=${id}`, (error, result) => {
     if (error) {
       throw error;
     }
-    response.status(200).json({message:"Successfully Deleted"});
-  
-  })
-}
+    response.status(200).json({ message: "Successfully Deleted" });
+  });
+};
 
 const updateUser = (request, response) => {
   const { email, id } = request.body;
-
 
   pool.query(
     `UPDATE person SET email=$1 WHERE passenger_id=$2`,
@@ -73,15 +73,14 @@ const updateUser = (request, response) => {
       if (error) {
         throw error;
       }
-      response.status(200).json({message:"Successfully Updated Email"});
+      response.status(200).json({ message: "Successfully Updated Email" });
     }
   );
 };
-
 
 module.exports = {
   getUsers,
   addNewUser,
   deleteUser,
-  updateUser
+  updateUser,
 };

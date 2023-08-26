@@ -19,7 +19,7 @@ app.delete('/user', db.deleteUser)
 app.put('/user', db.updateUser)
 
 app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
+  response.json({ info: 'Welcom to Express + Postgres API' })
 })
 
 app.listen(PORT, ()=>{
