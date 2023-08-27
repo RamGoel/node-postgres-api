@@ -18,14 +18,14 @@ To run this project, you will need to add the following environment variables to
 
 #### Get all users
 
-```http
+```
   GET /user
 ```
 
 
 #### Get single user
 
-```http
+```
   GET /user?id=[id]
 ```
 
@@ -36,7 +36,7 @@ To run this project, you will need to add the following environment variables to
 
 #### Add new user
 
-```http
+```
   POST /user
 ```
 
@@ -53,7 +53,7 @@ To run this project, you will need to add the following environment variables to
 #### Update Email of User
 
 
-```http
+```
   PUT /user
 ```
 
@@ -67,7 +67,7 @@ To run this project, you will need to add the following environment variables to
 #### Delete User
 
 
-```http
+``
   DELETE /user
 ```
 
