@@ -12,7 +12,7 @@ To run this project, you will need to add the following environment variables to
 `POSTGRES_USERNAME` : Username for Postgres
 `POSTGRES_PASSWORD` : Password for Postgres
 
-
+- This repo has CI using Github Actions
 
 ## API Reference
 
