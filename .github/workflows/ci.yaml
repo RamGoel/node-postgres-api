@@ -1,0 +1,16 @@
+name: Deploy
+
+
+on:
+  push:
+    branches:
+    - master
+
+
+jobs:
+ deploy:
+   runs-on: ubuntu-latest
+ steps:
+  - name: ram-deploy
+    run: |
+    echo "hello-world from ci/cd"
